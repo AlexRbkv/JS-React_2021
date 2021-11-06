@@ -1,4 +1,3 @@
-
 function showFirstFunc(a,b) {  //function declaration
     return a + b;
 }
@@ -60,10 +59,38 @@ console.log(str.toUpperCase()); // TEST
 console.log(str.toLowerCase()); // test
 console.log(str.indexOf('e')); // 1
 console.log(str.lastIndexOf('e')); // 1
+console.log(str.includes('s')); //true
+console.log(str.startsWith('e')); //false
+console.log(str.endsWith('t')); //true
 
-for (let char of str) {
-    console.log(char);
+console.log(str.slice(0,2)); //te
+console.log(str.slice(1)); //est
+console.log(str.slice(-2,-1)); //s
+
+let str1 = 'test2';
+console.log(str1.substring(2,4)); //st
+
+let str2 = '123456789';
+console.log(str2.substr(2,5)); //34567
+
+console.log('ca'.codePointAt(0)); //99
+console.log('ca'.codePointAt(1)); //97
+
+console.log(String.fromCodePoint(99)); //c
+
+console.log('ac' < 'AC'); //false
+console.log('ac'.localeCompare('AC')); // -1 (ac < AC)
+
+let str3 = ' ad d ';
+console.log(str3.trim()); // 'ad d'
+console.log(str3.repeat(3)); //ad d   ad d    ad d
+
+let str0 = 'test';
+for (let char of str0) {
+    console.log(char); //t e s t
 }
+
+console.log(typeof(Number('123'))); // number
 
 console.log(Math.round(12.2)); // 12;
 console.log(Math.round(12.5)); // 13;
@@ -127,3 +154,18 @@ console.log(~-1); // 0
 console.log(~[]); // -1
 console.log(~''); // -1
 console.log(~'1'); // -2
+
+var v = 1;
+
+var f1 = function() {
+    console.log(v,'1');
+};
+
+var f2 = function() {
+    var v = 2;
+    console.log(v,'2');
+    f1();
+    console.log(v,'22');
+};
+
+f2(); // 1
